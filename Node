@@ -1,0 +1,55 @@
+const mongoose-require("mongoose"); mongoose.set("strictQuery", true);
+
+2
+
+3
+
+mongoose.connect("mongodb://localhost:27017/SYCS")
+
+4
+
+.then(()=>console.log("Connected to database"))
+
+5
+
+.catch((err)=>console.error("Connection error:",err));
+
+6
+
+7
+
+const studentSchema mongoose.Schema({
+
+name: String,
+
+8
+
+age: Number,
+
+9
+
+class: String,
+
+10
+
+Rollno: Number,
+
+11
+
+email: String
+
+12
+
+),(collection:"students"});
+
+13
+
+module.exports={
+
+14
+
+15
+
+Student: mongoose.model("student", studentSchema),
+
+};
