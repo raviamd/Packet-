@@ -53,3 +53,35 @@ module.exports={
 Student: mongoose.model("student", studentSchema),
 
 };
+
+
+
+
+
+import time import datetime Import RP1.GPIO as GPIO Import tm1637
+
+#CLK-GPIO23 (Pin 16) #D10-> GPIO24 (Pin 18)
+
+Display = tm1637.TM1637(23, 24, tm1637.BRIGHT_TYPICAL)
+
+Display.Clear()
+
+Display.SetBrightnes(1)
+
+while(True):
+
+now datetime.datetime.now()
+
+hour = now.hour
+
+minute now.minute
+
+second now.second
+
+currenttime = ( int (hour / 10), hour % 10, int(minute / 10), minute % 18 1
+
+Display.Show(currenttime)
+
+Display.ShowDoublepoint(second % 2)
+
+time.sleep(1)
